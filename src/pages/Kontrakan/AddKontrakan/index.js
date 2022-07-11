@@ -33,14 +33,11 @@ const TambahKontrakan = (props) => {
                     <Text style={styles.headText}>Tambah Kontrakan</Text>
                 </View>
                 <View style={styles.addContainer}>
-                    <View style={styles.addCenterLogo}>
-                        <Image source={logoFull} style={styles.addImage}/>
-                    </View>
                     <TextInput underlineColorAndroid={true} placeholder="Nama Kontrakan" />
                     <TextInput underlineColorAndroid={true} placeholder="Alamat Kontrakan" />
                     <TextInput underlineColorAndroid={true} placeholder="Nama Pengelola" />
                     <View style={{ paddingLeft: normalize(10) }}>
-                        <Text>Jenis Kelamin :</Text>
+                        <Text style={styles.textJK}>Jenis Kelamin :</Text>
                         <View style={styles.addRadioContainer}>
                             <TouchableOpacity onPress={changeRadio} style={{ flexDirection: "row" }}>
                                 <RadioButton name={"radio1"} toggle={radio} />
@@ -53,8 +50,8 @@ const TambahKontrakan = (props) => {
                         </View>
                     </View>
                     <TextInput underlineColorAndroid={true} placeholder="No Telepon" keyboardType='number-pad' maxLength={13} />
-                    <TextInput underlineColorAndroid={true} placeholder="Harga Kontrakan" keyboardType='number-pad' maxLength={13}  />
-                    <TextInput underlineColorAndroid={true} placeholder="Jumlah Kamar" keyboardType='number-pad' maxLength={999} style={{width:normalize(150)}} />
+                    <TextInput underlineColorAndroid={true} placeholder="Harga Kontrakan" keyboardType='number-pad' maxLength={13} />
+                    <TextInput underlineColorAndroid={true} placeholder="Jumlah Kamar" keyboardType='number-pad' maxLength={999} style={{ width: normalize(150) }} />
                     <TouchableOpacity>
                         <View style={styles.addButtonSave}>
                             <Text style={styles.addButtonText}>Simpan</Text>

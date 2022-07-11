@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import normalize from 'react-native-normalize';
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
+import Headers from '../../../components/Kontrakan/Header';
 import ListBox from '../../../components/Kontrakan/ListBox';
 import { styles } from '../../../styles';
 
-const ListKontrakan = (props) => {
+const ListKontrakan = ({ navigation }) => {
 
     const listData = [
         {
@@ -26,17 +27,12 @@ const ListKontrakan = (props) => {
     return (
         <>
             <View>
-                <View style={styles.header}>
-                    <TouchableOpacity onPress={() => props.navigation.goBack()}>
-                        <FontAwesome5Icon name='chevron-left' size={20} color="white" />
-                    </TouchableOpacity>
-                    <Text style={styles.headText}>List Kontrakan</Text>
-                </View>
+                <Headers title="List Kontrakan" back={() => navigation.goBack()} />
 
                 <View style={{ padding: normalize(30) }}>
                     {
                         listData.map((data, i) => (
-                            <TouchableOpacity onPress={()=>props.navigation.navigate("list-room")} style={{ marginBottom: normalize(10) }} key={i}>
+                            <TouchableOpacity onPress={() => navigation.navigate("list-room")} style={{ marginBottom: normalize(10) }} key={i}>
                                 <ListBox
                                     address={data.address}
                                     housename={data.housename}
